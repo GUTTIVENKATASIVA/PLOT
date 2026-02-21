@@ -1,0 +1,409 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #2c3e50;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+}
+
+.logo-icon {
+  font-size: 28px;
+}
+
+.logo-text {
+  letter-spacing: 0.5px;
+}
+
+.nav-stat {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Logo image */
+.logo-image {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  background: white;
+  padding: 4px;
+  border-radius: 6px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.10);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative; /* allow absolute-positioned hero logos */
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+}
+
+/* Slightly tighter heading styles using Poppins */
+.hero-title, .card-title {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.25px;
+}
+
+/* Hero decorative images - displayed on left and right sides */
+.hero-logo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  opacity: 0.85;
+  z-index: 2;
+}
+
+.hero-logo.left {
+  left: 50px;
+}
+
+.hero-logo.right {
+  right: 50px;
+}
+
+.hero-welcome {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  opacity: 0.95;
+}
+
+@media (max-width: 1200px) {
+  .hero-logo {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-logo {
+    display: none;
+  }
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+/* Filter Section */
+.filter-section {
+  background: white;
+  padding: 50px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+/* Heading showing the range of plots */
+.plots-range {
+  font-size: 18px;
+  font-weight: 800;
+  color: #2c3e50;
+  margin-top: 8px;
+}
+
+.filters {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-btn {
+  padding: 12px 28px;
+  border: 2px solid #e0e6ed;
+  background: white;
+  color: #2c3e50;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-btn:hover {
+  border-color: #667eea;
+  color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.filter-icon {
+  font-size: 16px;
+}
+
+/* small count badge inside filter buttons */
+.filter-count {
+  display: inline-block;
+  background: rgba(0,0,0,0.06);
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  margin-left: 8px;
+}
+
+/* Properties Section */
+.properties-section {
+  flex: 1;
+  padding: 60px 20px;
+}
+
+/* Make properties container stretch full width to remove left/right whitespace */
+.properties-section .container {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0 28px; /* add side breathing room */
+}
+
+.grid {
+  display: grid;
+  /* Force 15 columns across and align grid to the left */
+  grid-template-columns: repeat(15, minmax(0, 1fr));
+  gap: 16px; /* spacing for clear separation */
+  margin-top: 16px;
+  justify-content: start;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.09);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  position: relative;
+  border: 1px solid rgba(34, 47, 62, 0.06);
+  min-height: 86px; /* consistent box height to avoid visual merging */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(34, 47, 62, 0.12);
+}
+
+.card-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 30px 20px;
+  color: white;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.card-content {
+  padding: 10px 10px 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-property {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #f6f9fc;
+}
+
+.card-property:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.property-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  color: #7a8fa6;
+}
+
+.property-value {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-top: 4px;
+}
+
+.property-price {
+  color: #667eea;
+  font-size: 22px;
+}
+
+.badge {
+  padding: 6px 10px;
+  border-radius: 14px;
+  color: white;
+  font-size: 11px;
+  display: inline-block;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-top: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.available {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.sold {
+  background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+}
+
+/* Additional status styles */
+.sold-out {
+  background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+}
+
+.not-for-sale {
+  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+}
+
+.hold {
+  background: linear-gradient(135deg, #ff7e5f 0%, #ffb199 100%);
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(135deg, #2c3e50 0%, #3d5a6c 100%);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: auto;
+}
+
+.footer p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filters {
+    justify-content: center;
+  }
+
+  .nav-logo {
+    font-size: 18px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 50px 15px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .filter-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

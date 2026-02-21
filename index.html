@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KARTHIKA TOWNSHIP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation Header -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <!-- left logo removed as requested -->
+      <div class="nav-info">
+        <span class="nav-stat"></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="src/LOGO.jpeg" alt="KARTHIKA TOWNSHIP - Approved Layout" class="hero-logo left" />
+    <img src="src/LOGO.jpeg" alt="KARTHIKA TOWNSHIP - Approved Layout" class="hero-logo right" />
+    <div class="hero-content">
+      <h3 class="hero-welcome">Welcome To</h3>
+      <h1 class="hero-title">KARTHIKA TOWNSHIP</h1>
+      <p class="hero-subtitle">Macherla first biggest approved layout</p>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <section class="filter-section">
+    <div class="container">
+      <h2 class="section-title">Filter Properties</h2>
+      <div class="filters">
+        <button class="filter-btn active" onclick="filterFlats('all')">All Properties <span class="filter-count" id="count-all"></span></button>
+        <button class="filter-btn" onclick="filterFlats('available')"><span class="filter-icon">✓</span> Available <span class="filter-count" id="count-available"></span></button>
+        <button class="filter-btn" onclick="filterFlats('sold')"><span class="filter-icon">✔</span> Sold <span class="filter-count" id="count-sold"></span></button>
+        <button class="filter-btn" onclick="filterFlats('not for sale')">Not For Sale <span class="filter-count" id="count-not-for-sale"></span></button>
+        <button class="filter-btn" onclick="filterFlats('hold')">Hold <span class="filter-count" id="count-hold"></span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Properties Grid -->
+  <section class="properties-section">
+      <div class="container">
+      <h2 class="plots-range">1 - 183 PLOTS</h2>
+      <div id="flatsContainer" class="grid"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; KARTHIKA TOWNSHIP</p>
+  </footer>
+
+  <script src="flats.js"></script>
+</body>
+</html>
